@@ -5,7 +5,6 @@ from echo_hiding import embed_message
 from echo_decoding import extract_message
 from eval_metrics import bit_error_rate, normalized_correlation
 
-
 #
 # EMBED
 #
@@ -20,7 +19,7 @@ def embed_watermark(input_audio, msg_file, out_audio, d0=150, d1=200, alpha=0.5,
 
     print("Embedding message into the audio file.")
     stego_signal = embed_message(signal, msg, d0, d1, alpha, frame_size)
-
+    
     print("Saving watermarked audio file.")
     save_audio(out_audio, stego_signal, sample_rate)
 
@@ -37,8 +36,8 @@ def extract_watermark(input_audio, frame_size=8192, d0=150, d1=200):
     print("Extracting the watermark from the audio file.")
     extracted = extract_message(signal, frame_size, d0, d1)
 
-    print("Extracted message: ")
-    print(extracted)
+    #print("Extracted message: ")
+    #print(extracted)
     return extracted
 
 

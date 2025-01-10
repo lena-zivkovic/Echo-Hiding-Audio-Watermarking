@@ -1,3 +1,5 @@
+import numpy as np
+
 def bit_error_rate(original, extracted):
     min_len = min(len(original), len(extracted))
     errors = sum(1 for o, e in zip(original[:min_len], extracted[:min_len]) if o != e)

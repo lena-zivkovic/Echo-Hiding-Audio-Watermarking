@@ -1,4 +1,7 @@
 from scipy.fftpack import fft, ifft
+from binary_utils import bits_to_text
+import numpy as np
+
 
 def detect_echo(signal, frame_size, d0, d1):
     num_frames = len(signal) // frame_size
